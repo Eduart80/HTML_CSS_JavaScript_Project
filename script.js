@@ -12,7 +12,7 @@ button.addEventListener('click', () => {
 
 async function countryData(params) {
     const countryD = await fetchData(params)
-    country.textContent = `<li>${countryD[0].name.common}</li>`
+   // country.innerHTML = `<li>${countryD[0].name.common}</li>`
     countryD[0].name.common
    
 }
@@ -22,12 +22,36 @@ async function fetchALLData() {
     const respond = await fetch(`https://restcountries.com/v3.1/all?fields=name,capital,region,languages,flags,population,currencies`);
     // need up to 10 fields
     const data = await respond.json();
-    return data[0];
+    return data;
 }
-fetchALLData().then(counties =>{
-    
+fetchALLData().then(countries =>{
+    const container = document.getElementById('countries-container')
+    countries.forEach(element => {
+        const card = createCards(element)
+        container.appendChild(card)
+    });
 })
+function createCards(country){
+    const columns = document.createElement('div')
+    columns.className='col-12 col-md-6 col-lg-3 mb-4'
 
+    const card = document.createElement('div')
+    card.className = 'card shadow-lg p-2 bg-light rounded-4 h-100'
+    card.style.width = '100%';
+
+    card.innerHTML = `<div class="card_image h-100">
+                        <img class="card-img-top w-100 rounded-3" src="${country.flags.png}" alt="${country.name.common}">
+                     </div>
+                     <div class="card-body">
+                        <h5 class="card-title fs-4 fw-semibold">${country.name.common}</h5>
+                        <p class="card-text fs-8 text-body-secondary">Population: ${country.population.toLocaleString()}</p>
+                        <p class="card-text fs-8 text-body-secondary">Region: ${country.region}</p>
+                        <p class="card-text fs-8 text-body-secondary">Capital: ${country.capital ? country.capital[0] : 'N/A'}</p>
+                     </div>
+                    `
+        columns.appendChild(card)
+        return columns
+}
 
 
 // fetchData by id
