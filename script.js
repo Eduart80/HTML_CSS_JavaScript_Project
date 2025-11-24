@@ -1,29 +1,24 @@
+"use strict"
+import {NetworkError, DataError} from './errorClass.js'
 
-
-const country = document.getElementById('country')
-const button = document.getElementById('searchBtn')
-const searchInput = document.getElementById('search')
-const img = document.getElementById('country-flag');
-
-button.addEventListener('click', () => {
-    let input = searchInput.value;
-    console.log(input);
-});
-
-async function countryData(params) {
-    const countryD = await fetchData(params)
-   // country.innerHTML = `<li>${countryD[0].name.common}</li>`
-    countryD[0].name.common
-   
-}
-countryData('Albania')
 // get all
-async function fetchALLData() {
+export async function fetchALLData() {
+    let data
+    try{
     const respond = await fetch(`https://restcountries.com/v3.1/all?fields=name,capital,region,languages,flags,population,currencies`);
-    // need up to 10 fields
-    const data = await respond.json();
+         data = await respond.json();
+    }catch(e){
+        if (e instanceof NetworkError) {
+                    console.error('Network error:', e.message);
+                } else if (e instanceof DataError) {
+                    console.error('Data error:', e.message);
+                } else {
+                    console.error('Unknown error:', e);
+                }
+    }
     return data;
 }
+
 fetchALLData().then(countries =>{
     const container = document.getElementById('countries-container')
     countries.forEach(element => {
@@ -31,7 +26,7 @@ fetchALLData().then(countries =>{
         container.appendChild(card)
     });
 })
-function createCards(country){
+export function createCards(country){
     const columns = document.createElement('div')
     columns.className='col-12 col-md-6 col-lg-3 mb-4'
 
@@ -60,14 +55,3 @@ async function fetchData(param) {
     const data = await respond.json();
     return data;
 }
-
-// "name.common" for name
-//  "capital": 
-// "region"
-// "languages" "sqi"
-//  "flags":  "png": "https://flagcdn.com/w320/al.png",
-// flags     "svg": "https://flagcdn.com/al.svg",
-
-// "population":
-// "currencies""ALL": 
-// currencies "name": 

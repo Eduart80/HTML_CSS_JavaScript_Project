@@ -10,25 +10,34 @@
     <title>Where in the world</title>
 </head>
 <body>
-    <div>
+    <nav>
         <h4>Where in the world</h4> 
         <icon>halfmmon</icon>
-    </div>
-    <div>
-        <input placeholder="enter country" id="search">
-        <button class="btn" id="searchBtn">Search</button>
-        <select id="region-filte" class="form-select mb-3" style="width: 250px;" >Filter by Reagon
-           <option value="">The World</option>
-           <option value="Africa">Africa</option>
-           <option value="Americas">Americas</option>
-           <option value="Asia">Asia</option>
-           <option value="Europe">Europe</option>
-           <option value="Oceanis">Oceania</option>
-        </select>
-    </div>
+    </nav>
+    <section>
+        <div>
+            <input type="text" name="search" placeholder="Search.." class="search-input">
+        </div>
+        <div>
+            <select id="region-filter" class="form-select mb-3" style="width: 250px;" >Filter by Reagon
+                <option value="">The World</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceanis">Oceania</option>
+            </select>
+        </div>
+    </section>
+<section>
     <div class="container">
         <div class="row" id="countries-container"></div>
     </div>
+</section>
+<footer>
+    <h6>Project HTML CSS JavaScript</h6>
+</footer>
     <script src="script.js" type="module"></script>
+    <script src="filters.js" type="module"></script>
 </body>
 </html>
