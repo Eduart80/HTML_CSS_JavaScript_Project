@@ -18,12 +18,18 @@ async function countryData(params) {
 }
 countryData('Albania')
 // get all
-// async function fetchData() {
-//     const respond = await fetch(`https://restcountries.com/v3.1/`);
-//     // need up to 10 fields
-//     const data = await respond.json();
-//     return data;
-// }
+async function fetchALLData() {
+    const respond = await fetch(`https://restcountries.com/v3.1/all?fields=name,capital,region,languages,flags,population,currencies`);
+    // need up to 10 fields
+    const data = await respond.json();
+    return data[0];
+}
+fetchALLData().then(counties =>{
+    
+})
+
+
+
 // fetchData by id
 async function fetchData(param) {
     const respond = await fetch(`https://restcountries.com/v3.1/name/${param}`);
