@@ -11,7 +11,8 @@ body.dark-mode,
 body.dark-mode .search-input,
 body.dark-mode .form-select,
 body.dark-mode .my-card,
-body.dark-mode .text-body-secondary {
+body.dark-mode .text-body-secondary,
+body.dark-mode #mode {
  background: #222 !important;
   color: #fff !important;
   border-color: #444 !important;
