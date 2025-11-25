@@ -33,6 +33,10 @@ export function createCards(country){
     const card = document.createElement('div')
     card.className = 'card shadow-lg p-2 my-card bg-light rounded-4 h-100'
     card.style.width = '100%';
+    card.style.cursor = 'pointer'
+    card.addEventListener('click', () => {
+    window.location.href = `details.html?country=${encodeURIComponent(country.name.common)}`;
+    })
 
     card.innerHTML = `<div class="card_image h-100">
                         <img class="card-img-top w-100 rounded-3" src="${country.flags.png}" alt="${country.name.common}">
@@ -46,12 +50,4 @@ export function createCards(country){
                     `
         columns.appendChild(card)
         return columns
-}
-
-
-// fetchData by id
-async function fetchData(param) {
-    const respond = await fetch(`https://restcountries.com/v3.1/name/${param}`);
-    const data = await respond.json();
-    return data;
 }

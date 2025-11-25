@@ -1,5 +1,4 @@
 
-
 body {
     max-width: 1440px;
     margin: auto;
@@ -9,8 +8,6 @@ body {
     font-style: normal;
 }
 body.dark-mode,
-body.dark-mode .search-input,
-body.dark-mode .form-select,
 body.dark-mode .my-card,
 body.dark-mode .text-body-secondary,
 body.dark-mode #mode {
@@ -19,12 +16,11 @@ body.dark-mode #mode {
   border-color: #444 !important;
 }
 body.light-mode,
-body.light-mode .form-select,
-body.light-mode .search-input,
 body.light-mode .my-card {
   background: #fff !important;
   color: #222 !important;
   border-color: #ccc !important;
+  
 }
 #moon {
   width: 25px;
@@ -64,17 +60,26 @@ nav {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-#countries-container {
-  font-size: 16px;
+.img-fluid {
+  width: 100% !important;
+  max-width:90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-@media  (max-width: 767px) {
-  .search-input{
-    width: 100%;
+@media (max-width: 767px) {
+  #country-details {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0;
   }
-  .search-selector-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+  #country-details > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px;
+    display: block !important;
+    float: none !important;
+    flex: 0 0 auto !important;
   }
 }
