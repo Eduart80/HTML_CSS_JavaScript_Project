@@ -31,7 +31,7 @@ export function createCards(country){
     columns.className='col-12 col-md-6 col-lg-3 mb-4'
 
     const card = document.createElement('div')
-    card.className = 'card shadow-lg p-2 bg-light rounded-4 h-100'
+    card.className = 'card shadow-lg p-2 my-card bg-light rounded-4 h-100'
     card.style.width = '100%';
 
     card.innerHTML = `<div class="card_image h-100">

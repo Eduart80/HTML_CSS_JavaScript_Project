@@ -7,17 +7,34 @@ body {
     font-weight: 500;
     font-style: normal;
 }
-body.dark-mode, 
+body.dark-mode,
+body.dark-mode .search-input,
 body.dark-mode .form-select,
-body.dark-mode .search-input {
-  background: #222;
-  color: #fff;
+body.dark-mode .my-card,
+body.dark-mode .text-body-secondary {
+ background: #222 !important;
+  color: #fff !important;
+  border-color: #444 !important;
 }
 body.light-mode,
-body.dark-mode .form-select,
-body.dark-mode .search-input {
-  background: #fff;
-  color: #222;
+body.light-mode .form-select,
+body.light-mode .search-input,
+body.light-mode .my-card {
+  background: #fff !important;
+  color: #222 !important;
+  border-color: #ccc !important;
+}
+#moon {
+  width: 25px;
+  height: 25px;
+  background: transparent; 
+  border: none;            
+}
+#theme-toggle {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 nav {
   display: flex;
@@ -35,10 +52,7 @@ nav {
   width: 100%;
   padding: 0 30px 5px 30px ;
 }
-#moon {
-  width: 25px;
-  height: 25px;
-}
+
 .search-input {
   width: 250px;
   padding: 5px 5px 5px 40px; 
@@ -48,7 +62,7 @@ nav {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-#countries-containe {
+#countries-container {
   font-size: 16px;
 }
 
