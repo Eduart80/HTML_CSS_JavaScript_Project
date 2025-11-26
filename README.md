@@ -11,7 +11,9 @@ Programming language used:
 - Mobile respond friendly
 
 Project is a represantation of World Countries flag, demographic information, polulation, and more.
-For this API we will use this URL: https://www.frontendmentor.io/, to get the data.
+For this API we will use this URL: https://restcountries.com/v3.1/all, to get the data.
+
+Deployment link for this project: [HTML_CSS_JavaScript_Project](https://eduart80.github.io/HTML_CSS_JavaScript_Project/)
 
 ## Project Overview
 
