@@ -12,11 +12,9 @@ if (!countryName) {
       return response.json();
     })
     .then(function(data) {
-      console.log(data);
       let country = data[0];
       let borders = country.borders || [];
       let nativeName = country.name.common;
-      console.log(country);
       
       let population = country.population ? country.population.toLocaleString() : 'N/A';
       let region = country.region || 'N/A';
@@ -43,7 +41,7 @@ if (!countryName) {
         '<div class="country-detail-block col-md-6">' +
           '<img src="' + country.flags.png + '" alt="' + country.name.common + '" class="img-fluid rounded-3 shadow">' +
         '</div>' +
-        '<div class="country-detail-block col-md-6">' +
+        '<div class="country-detail-block col-md-6" style="padding-left:25px">' +
           '<h2>' + country.name.common + '</h2>' +
           '<p><strong>Native Name:</strong> ' + nativeName + '</p>' +
           '<p><strong>Population:</strong> ' + population + '</p>' +

@@ -67,19 +67,23 @@ nav {
   display: block;
   margin: 0 auto;
 }
-
-@media (max-width: 767px) {
-  #country-details {
-    display: flex !important;
+#country-details{
+  display: flex;
+  flex-direction: row;
+}
+/* country-detail-block */
+@media screen and (max-width: 767px) {
+  .country-detail-block{
     flex-direction: column !important;
-    gap: 0;
   }
+  /* #country-details {
+    flex-direction: column !important;
+  } */
   #country-details > div {
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin-bottom: 20px;
-    display: block !important;
     float: none !important;
-    flex: 0 0 auto !important;
+    margin-bottom: 20px;
   }
 }
