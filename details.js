@@ -1,4 +1,4 @@
-
+"use strict"
 const params = new URLSearchParams(window.location.search);
 const countryName = params.get('country');
 const detailsDiv = document.getElementById('country-details');
