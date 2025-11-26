@@ -19,14 +19,20 @@ regionFilters.addEventListener('change', (event)=>{
 
 
 document.querySelector('.search-input').addEventListener('input',function(e){
-  const searchEvent = e.target.value.toLowerCase()
-  fetchALLData().then(country1=>{
-    const container = document.getElementById('countries-container')
-    container.innerHTML=''
-    country1.filter(count=> count.name.common.toLowerCase().includes(searchEvent))
-    .forEach(country2 => {
-      const card = createCards(country2)
-      container.appendChild(card)
-    })
-  })
+  const searchEvent = e.target.value.toLowerCase().replace(/[^a-zA-Z]/g, "")
+  if(searchEvent){
+    fetchALLData().then(country1=>{
+        const container = document.getElementById('countries-container')
+        container.innerHTML=''
+        country1.filter(count=> count.name.common.toLowerCase().includes(searchEvent))
+        .forEach(country2 => {
+          const card = createCards(country2)
+          container.appendChild(card)
+        })
+      })
+  }else{
+    alert('Only letters on search field.')
+    e.target.value=''
+  }
+  
 })
