@@ -8,39 +8,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Where in the world</title>
 </head>
 <body class="light-mode">
-    <nav>
-        <h4>Where in the world?</h4> 
-        <button id="theme-toggle">
-        <img src="./images/moonDark.png" alt="moonLight" id="moon"/><span id="mode">Dark Mode</span>
-        </button>
-    </nav>
-    <section class="search-selector-row">
-        <div>
-            <input type="text" name="search" placeholder="Search..." class="search-input" aria-label="search-input">
-        </div>
-        <div>
-            <select id="region-filter" class="form-select mb-3" style="width: 250px;" >Filter by Reagon
-                <option value="" aria-selected="true">The World</option>
-                <option value="Africa">Africa</option>
-                <option value="Americas">Americas</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-        </div>
-    </section>
-    <section class="flag-presentation">
-        <div class="container">
-            <div class="row" id="countries-container"></div>
-        </div>
-    </section>
-<footer>
-    <h6>Project HTML CSS JavaScript</h6>
-</footer>
+    <a href="#countries-container" class="visually-hidden-focusable">Skip to main content</a>
+    <header>
+      <nav aria-label="Main navigation">
+          <h1>Where in the world?</h1> 
+          <button id="theme-toggle" aria-label="Toggle dark and light mode">
+            <img src="./images/moonDark.png" alt="moonLight" id="moon"/><span id="mode">Dark Mode</span>
+          </button>
+      </nav>
+    </header>
+    <main>
+      <section class="search-selector-row" aria-label="Search and filter countries">
+          <div>
+              <label for="search-input" class="visually-hidden">Search for a country</label>
+              <input id="search-input" type="text" name="search" placeholder="Search..." class="search-input" aria-label="Search for a country">
+          </div>
+          <div>
+              <label for="region-filter" class="visually-hidden">Filter by region</label>
+              <select id="region-filter" class="form-select mb-3" style="width: 250px;" aria-label="Filter by region">
+                  <option value="">The World</option>
+                  <option value="Africa">Africa</option>
+                  <option value="Americas">Americas</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Oceania">Oceania</option>
+              </select>
+          </div>
+      </section>
+      <section class="flag-presentation" aria-label="Country cards">
+          <div class="container">
+              <div class="row" id="countries-container"></div>
+          </div>
+      </section>
+    </main>
+    <footer>
+        <h6>Project HTML CSS JavaScript</h6>
+    </footer>
     <script src="script.js" type="module"></script>
     <script src="filters.js" type="module"></script>
     <script src="theme.js"></script>

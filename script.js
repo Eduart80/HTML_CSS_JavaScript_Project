@@ -34,6 +34,7 @@ export function createCards(country){
     card.className = 'card shadow-lg p-2 my-card bg-light rounded-4 h-100'
     card.style.width = '100%';
     card.style.cursor = 'pointer'
+    card.setAttribute('aria-label', `View details for ${country.name.common}`);
     card.addEventListener('click', () => {
     window.location.href = `details.html?country=${encodeURIComponent(country.name.common)}`;
     })
