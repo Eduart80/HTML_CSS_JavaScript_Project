@@ -43,14 +43,18 @@ if (!countryName) {
         '</div>' +
         '<div class="country-detail-block col-lg-6 col-sm-12" style="padding-left:25px">' +
           '<h2>' + country.name.common + '</h2>' +
+          '<div class="info1">'+
           '<p><strong>Native Name:</strong> ' + nativeName + '</p>' +
           '<p><strong>Population:</strong> ' + population + '</p>' +
           '<p><strong>Region:</strong> ' + region + '</p>' +
           '<p><strong>Sub Region:</strong> ' + subregion + '</p>' +
+          '</div>'+
+          '<div class="info2">'+
           '<p><strong>Capital:</strong> ' + capital + '</p>' +
           '<p><strong>Top Level Domain:</strong> ' + tld + '</p>' +
           '<p><strong>Currencies:</strong> ' + currencies + '</p>' +
           '<p><strong>Languages:</strong> ' + languages + '</p>' +
+          '</div>'+
           '<p><strong>Border Countries:</strong> ' + bordersHtml + '</p>' +
         '</div>';
     })

@@ -1,7 +1,6 @@
-
 body {
     max-width: 1440px;
-    margin: auto !important;
+    margin: auto;
     font-size: 14px;
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 500;
@@ -70,10 +69,41 @@ nav {
 
 .country-detail-block{
   display:inline-block;
+  margin-bottom: 15px;
  }
+ 
+.card-details {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.info1,
+.info2 {
+  display: inline-block;
+  padding-right: 25px;
+}
 
 @media screen and (max-width: 767px) {
  .country-detail-block{
   display: block;
- }
+  } 
+}
+ 
+@media screen and (max-width:767px){
+  .info1::after,
+  .info2::after,
+  .info1::before,
+  .info2::before {
+    content: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .info1,
+  .info2 {
+    display: block !important;
+    width: 100% !important;
+    font-size: 20px !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
 }

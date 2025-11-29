@@ -7,6 +7,8 @@ export async function fetchALLData() {
     try{
     const respond = await fetch(`https://restcountries.com/v3.1/all?fields=name,capital,region,languages,flags,population,currencies`);
          data = await respond.json();
+         console.log(data);
+         
     }catch(e){
         if (e instanceof NetworkError) {
                     console.error('Network error:', e.message);

@@ -34,5 +34,4 @@ document.querySelector('.search-input').addEventListener('input',function(e){
     alert('Only letters on search field.')
     e.target.value=''
   }
-  
 })
